@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: projeto-teste
+spec:
+  selector:
+    matchLabels:
+      app: projeto-teste
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: projeto-teste
+    spec:
+      containers:
+        - name: projeto-teste
+          image: mitalo/projeto-teste
+          ports:
+            - containerPort: 3001
